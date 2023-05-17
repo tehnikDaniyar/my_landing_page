@@ -1,0 +1,61 @@
+.header {
+	background-color: rgb(87, 20, 20);
+	padding: 20px 0;
+	transition: all 0.4s ease 0s;
+
+	/* .header_container */
+
+	&_container {}
+
+	/* .header__menu */
+
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	/* .header__logo */
+
+	&__logo {
+		flex: 1 1 50%;
+		font-size: 32px;
+
+	}
+
+	/* .header__list */
+
+	&__list {
+		flex: 1 1 50%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	/* .header__item */
+
+	&__item {}
+
+	/* .header__link */
+
+	&__link {
+		color: white
+	}
+}
+
+.markerObserver {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 40px;
+	width: 100%;
+}
+
+.header._scroll {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	padding: 5px 0;
+	opacity: 0.7;
+}
