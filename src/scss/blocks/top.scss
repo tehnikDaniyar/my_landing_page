@@ -1,0 +1,55 @@
+.top {
+	padding-top: 90px;
+
+	/* .top_container */
+
+	&_container {
+		position: relative;
+	}
+
+	/* .top__title */
+
+	&__title {
+		font-size: 32px;
+		color: white;
+		text-align: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 7;
+	}
+
+	/* .top__slider */
+
+	&__slider {}
+}
+
+.swiper {
+	width: 100%;
+	height: 500px;
+}
+
+.swiper-wrapper {}
+
+.swiper-slide {
+	height: 100%;
+	padding-top: 30px;
+
+	&__title {
+		position: relative;
+		top: 0;
+		text-align: center;
+		z-index: 5;
+		font-size: 32px;
+		color: white;
+	}
+}
+
+.swiper-pagination {}
+
+.swiper-button-prev {}
+
+.swiper-button-next {}
+
+.swiper-scrollbar {}
