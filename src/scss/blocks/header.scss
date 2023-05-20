@@ -2,11 +2,21 @@
 	background-color: rgb(87, 20, 20);
 	padding: 20px 0;
 	transition: all 0.4s ease 0s;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 50;
+
+	&::before {
+		content: "";
+		width: 100%;
+		position: fixed;
+		height: 40px;
+		left: 0;
+		top: 0;
+		background-color: rgba(87, 20, 20, 0.502);
+	}
 
 	/* .header_container */
 
@@ -47,14 +57,22 @@
 
 		@media (max-width:767px) {
 			position: fixed;
-			left: 0;
+			left: -100%;
+			visibility: hidden;
 			top: 0;
 			width: 100%;
 			height: 100%;
-			background-color: #000000;
+			background-color: #000000ac;
 			padding: 80px 40px;
 			overflow: auto;
 			z-index: 10;
+			transition: all 0.3s ease 0s;
+			z-index: 10;
+
+			&._show {
+				left: 0;
+				visibility: visible;
+			}
 		}
 	}
 
@@ -106,12 +124,13 @@
 .header._scroll {
 	position: fixed;
 	padding: 5px 0;
-	opacity: 0.7;
+	background-color: rgba(87, 20, 20, 0.492);
 }
+
+//======================icon-menu=========================================================
 
 .icon-menu {
 	display: none;
-
 
 	@media (max-width:767px) {
 		display: block;
@@ -119,47 +138,57 @@
 		height: 30px;
 		position: relative;
 		z-index: 50;
+
+
+		&::after,
+		&::before,
+		& span {
+			width: 100%;
+			height: 3px;
+			background-color: #fff;
+			position: absolute;
+			left: 0;
+			transition: all 0.3s ease 0s;
+		}
+
+		&::after,
+		&::before {
+			content: "";
+		}
+
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		& span {
+			display: block;
+			top: 50%;
+			transform: scaleX(1) translate(0, -50%);
+		}
+
+		&._active {
+			&::before {
+				top: 50%;
+				transform: translate(0, -50%) rotate(45deg);
+			}
+
+			&::after {
+				bottom: 50%;
+				transform: translate(0, 50%) rotate(-45deg);
+			}
+
+			& span {
+				transform: scaleX(0);
+			}
+		}
 	}
 }
 
-.icon-menu::after,
-.icon-menu::before,
-.icon-menu span {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 3px;
-	background-color: #fff;
-	position: absolute;
-	left: 0;
-	transition: all 0.3s ease 0s;
-}
-
-.icon-menu::before {
-	top: 0;
-}
-
-.icon-menu::after {
-	bottom: 0;
-}
-
-.icon-menu span {
-	top: 45%;
-	transform: scaleX(1);
-}
-
-.icon-menu._active {
-	&::before {
-		transform: rotate(25deg);
-		transform-origin: left;
-	}
-
-	&::after {
-		transform: rotate(-25deg);
-		transform-origin: left;
-	}
-
-	& span {
-		transform: scaleX(0);
-	}
+body._scrollOff {
+	overflow: hidden;
 }
