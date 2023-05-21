@@ -1,9 +1,9 @@
 export const observerForHeader = () => {
-	const header = document.querySelector('.header:before');
-	console.log(header);
+	const header = document.querySelector('.header');
+	const headerMarker = document.querySelector('.observerMarker');
 	const options = {
 		threshold: 1,
-		rootMargin: "-40px 0px 0px 0px"
+		rootMargin: "0px 0px 0px 0px"
 	};
 	const observer = new IntersectionObserver(callback, options);
 
@@ -13,13 +13,15 @@ export const observerForHeader = () => {
 			const { target, isIntersecting, intersectionRatio } = entry;
 			console.log(isIntersecting);
 			console.log(target);
-			if (isIntersecting) {
-				target.classList.add('_scroll');
+			if (!isIntersecting) {
+				console.log(target.closest('.header'));
+				// target.closest('.header').classList.add('_scroll');
+				header.classList.add('_scroll');
 			} else {
-				target.classList.remove('_scroll');
+				header.classList.remove('_scroll');
 			}
 		});
 	};
 
-	observer.observe(header)
+	observer.observe(headerMarker)
 }
