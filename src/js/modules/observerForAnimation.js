@@ -1,9 +1,9 @@
 export const observerForAnimation = () => {
-	const servicesBody = document.querySelector('.services');
-	console.log(servicesBody);
+	const servicesItems = document.querySelectorAll('.services__item');
+	// console.log(servicesBody);
 	const options = {
-		threshold: 0,
-		rootMargin: "0px 0px -300px 0px"
+		threshold: 0.4,
+		rootMargin: "0px 0px 0px 0px"
 	};
 	const callback = (entries, observer) => {
 
@@ -12,9 +12,9 @@ export const observerForAnimation = () => {
 			console.log(isIntersecting);
 
 			if (isIntersecting) {
-				target.querySelector('.services__body').classList.add('_show');
+				target.classList.add('_show');
 			} else {
-				target.querySelector('.services__body').classList.remove('_show');
+				target.classList.remove('_show');
 			}
 		});
 
@@ -22,5 +22,6 @@ export const observerForAnimation = () => {
 
 	const observer = new IntersectionObserver(callback, options);
 
-	observer.observe(servicesBody);
+	servicesItems.forEach(servicesItem => observer.observe(servicesItem))
+
 }

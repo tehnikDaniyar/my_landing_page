@@ -19,11 +19,8 @@
 	&__body {
 		display: flex;
 		gap: 30px;
-		position: relative;
-		left: -200%;
-		visibility: hidden;
 
-		transition: all 0.6s ease 0s;
+		transition: all 0.8s ease 0s;
 
 		@media (max-width:1090px) {
 			flex-direction: column;
@@ -40,9 +37,17 @@
 
 	&__item {
 		flex: 0 1 33%;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 1s ease 0s;
 
 		@media (max-width:1090px) {
 			padding: 80px;
+		}
+
+		&._show {
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 }
