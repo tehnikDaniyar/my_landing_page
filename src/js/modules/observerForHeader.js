@@ -11,11 +11,8 @@ export const observerForHeader = () => {
 
 		entries.forEach(entry => {
 			const { target, isIntersecting, intersectionRatio } = entry;
-			console.log(isIntersecting);
-			console.log(target);
+
 			if (!isIntersecting) {
-				console.log(target.closest('.header'));
-				// target.closest('.header').classList.add('_scroll');
 				header.classList.add('_scroll');
 			} else {
 				header.classList.remove('_scroll');
