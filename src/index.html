@@ -115,6 +115,32 @@
 					</div>
 				</div>
 			</section>
+			<section class="page__prices prices">
+				<div class="prices_container _container">
+					<h2 class="prices__title">Расценки на услуги</h2>
+					<div class="prices__body">
+						<div class="prices__choose-categoryes">
+							<select name="category" id="selector">
+								<option selected disabled>выберите категорию</option>
+								<option value="video">видеонаблюдение</option>
+								<option value="alarm-system">сигнализация</option>
+								<option value="acces-control">контроль доступа</option>
+							</select>
+						</div>
+						<div class="prices__categoryes categoryes">
+							<div class="categoryes__item categoryes__item_video" id="prices-video">
+								video
+							</div>
+							<div class="categoryes__item categoryes__item_alarm-system" id="prices-alarmSystem">
+								alarm-system
+							</div>
+							<div class="categoryes__item categoryes__item_acces-control" id="prices-accesControl">
+								acces-control
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		@@include('./html/footer.html')
 	</div>
