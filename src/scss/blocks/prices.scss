@@ -87,12 +87,14 @@
 		left: -100%;
 		top: 0;
 		width: 100%;
-		height: 100%;
-		border: 8px solid white;
-		text-align: center;
+		// height: 100%;
+		border: 3px solid white;
+		box-shadow: 1px 15px 30px 8px black;
+		// text-align: center;
 		transition: all 0.5s ease 0s;
 		opacity: 0;
 		visibility: hidden;
+		padding: 30px;
 
 		&._active {
 			left: 0;
@@ -111,5 +113,95 @@
 		/* .categoryes__item_acces-control */
 
 		&_acces-control {}
+	}
+}
+
+
+
+//================calc-video====================================
+
+.calc-video {
+
+	h4 {
+		font-size: 26px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	&>div:not(:last-child) {
+		margin-bottom: 30px;
+	}
+
+	&>div {
+		max-width: 70%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	label {
+		font-size: 24px;
+		margin-right: 20px;
+	}
+
+	input[type="number"] {
+		border: 1px solid white;
+		height: 60px;
+		padding: 10px;
+		font-size: 20px;
+		width: 150px;
+	}
+
+	select {
+		border: 1px solid white;
+		padding: 10px;
+		font-size: 20px;
+	}
+
+	/* .calc-video__amountIndoorCameras */
+
+	&__amountIndoorCameras {}
+
+	/* .calc-video__amountOutdoorCameras */
+
+	&__amountOutdoorCameras {}
+
+	/* .calc-video__installationMethod */
+
+	&__installationMethod {}
+
+	/* .calc-video__aditionalOptions */
+
+	&__aditionalOptions {
+		flex-direction: column;
+	}
+
+	/* .calc-video__res */
+
+	&__res {
+		font-size: 38px;
+	}
+}
+
+.aditionalOption {
+
+	/* .aditionalOption__items */
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+
+		input {
+			margin-left: 30px;
+			width: 30px;
+			height: 30px;
+		}
+
+		label {
+			margin: 0 0 30px 0;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			justify-content: space-between;
+		}
 	}
 }

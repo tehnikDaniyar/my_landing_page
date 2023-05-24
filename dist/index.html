@@ -156,8 +156,38 @@
 							</select>
 						</div>
 						<div class="prices__categoryes categoryes">
-							<div class="categoryes__item categoryes__item_video" id="prices-video">
-								video
+							<div class="categoryes__item categoryes__item_video calc-video" id="prices-video">
+								<div class="calc-video__amountIndoorCameras">
+									<label for="amountIndoorCameras">Укажите количество внутренних камер</label>
+									<input value="1" type="number" id="amountIndoorCameras" min="1" max="32" step="1">
+								</div>
+								<div class="calc-video__amountOutdoorCameras">
+									<label for="amountOutdoorCameras">Укажите количество уличных камер камер</label>
+									<input value="1" type="number" id="amountOutdoorCameras" min="1" max="32" step="1">
+								</div>
+								<div class="calc-video__installationMethod">
+									<label for="installationMethod">Выбирете способ монтажа кабеля</label>
+									<select name="" id="installationMethod">
+										<option value="open">Открытый способ</option>
+										<option value="amstrong">За фальш-потолком</option>
+										<option value="decor">В кабельных каналах</option>
+										<option value="combined">Коминированный из всех перечисленых</option>
+									</select>
+								</div>
+								<div class="calc-video__aditionalOptions aditionalOption">
+									<h4>Выбирите дополнительные опции</h4>
+									<div class="aditionalOption__items">
+										<label>Установка на высоте более 8
+											метров<input type="checkbox" name="" id="height8m"></label>
+										<label>Протяжка улиного кабеля по опорам на
+											стальном троссе<input type="checkbox" name="" id="street"></label>
+										<label>Уклада кабеля в траншеи или по
+											подземным коммуникациям<input type="checkbox" name="" id="undeground"></label>
+									</div>
+								</div>
+								<div class="calc-video__res">
+
+								</div>
 							</div>
 							<div class="categoryes__item categoryes__item_alarm-system" id="prices-alarmSystem">
 								alarm-system
