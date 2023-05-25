@@ -35,15 +35,17 @@ export const pricesCalc = () => {
 	const street = document.querySelector('#street');
 	const undeground = document.querySelector('#undeground');
 	const res = document.querySelector('.calc-video__res');
+	getResCalcVideo();
 
 	const inputs = [amountIndoorCameras, amountOutdoorCameras, installationMethod, height8m, street, undeground];
 	inputs.forEach(input => {
 		input.addEventListener('change', getResCalcVideo);
 	})
 
-	function getResCalcVideo() {
+	async function getResCalcVideo() {
 		let camerasIndor;
 		let camerasOutdoor;
+		let amountCameras;
 		let cable;
 		let connectors;
 		let decore;
@@ -53,54 +55,76 @@ export const pricesCalc = () => {
 		let dvr;
 		let metithes;
 		let works;
+		let price;
+
+		await fetch('../files/price.json').then(response => response.json()).then(json => price = json)
+		let priceCameraIndoor = price["camerasIndoor"];
+		let priceCameraOutdoor = price["camerasOutdoor"];
+		let priceCable = price["cable"];
+		let priceConnectors = price["connectors"];
+		let priceDecore = price["decore"];
+		let priceMonitorSmall = price["monitorSmall"];
+		let priceMonitorBig = price["monitorBig"];
+		let priceHdd = price["hdd"];
+		let priceAdaptor = price["adaptor"];
+		let priceDvr4Ch = price["dvr4ch"];
+		let priceDvr8Ch = price["dvr8ch"];
+		let priceDvr16Ch = price["dvr16ch"];
+		let priceDvr32Ch = price["dvr32ch"];
+		let priceMetithes = price["metithes"];
+		let priceWorks = price["works"];
 
 
-		camerasIndor = Math.abs(+amountIndoorCameras.value) * 1800;
-		camerasOutdoor = Math.abs(+amountOutdoorCameras.value) * 2200;
-		cable = (camerasIndor + camerasOutdoor) * 35 * 40;
-		connectors = (camerasIndor + camerasOutdoor) * 3 * 50;
+		camerasIndor = Math.abs(+amountIndoorCameras.value) * priceCameraIndoor;
+		camerasOutdoor = Math.abs(+amountOutdoorCameras.value) * priceCameraOutdoor;
+		amountCameras = (Math.abs(+amountIndoorCameras.value) + Math.abs(+amountOutdoorCameras.value));
+		cable = (amountCameras * 35) * priceCable;
+		connectors = (amountCameras) * 3 * priceConnectors;
 
-		if (installationMethod.value === 'decore') {
-			decore = cable * 0.6 * 35;
+		console.log(installationMethod.value);
+
+		if (installationMethod.value === 'decor') {
+			decore = (amountCameras * 35) * 0.6 * priceDecore;
 		} else if (installationMethod.value === 'combined') {
-			decore = cable * 0.3 * 35;
+			decore = (amountCameras * 35) * 0.3 * priceDecore;
 		} else {
 			decore = 0;
 		}
 
-		if ((camerasIndor + camerasOutdoor) <= 8) {
-			monitor = 8000;
+		if (amountCameras <= 8) {
+			monitor = priceMonitorSmall;
 		} else {
-			monitor = 14000;
+			monitor = priceMonitorBig;
 		};
 
-		hdd = Math.ceil(((camerasIndor + camerasOutdoor) / 8) * 4500);
-		adaptor = Math.ceil(((camerasIndor + camerasOutdoor) / 8) * 1500);
+		hdd = Math.ceil(amountCameras / 8) * priceHdd;
 
-		if ((camerasIndor + camerasOutdoor) <= 8) {
-			dvr = 4000;
-		} else if ((camerasIndor + camerasOutdoor) > 8 && (camerasIndor + camerasOutdoor) <= 16) {
-			dvr = 6000;
-		} else if ((camerasIndor + camerasOutdoor) > 16 && (camerasIndor + camerasOutdoor) <= 32) {
-			dvr = 9000;
+		adaptor = Math.ceil(amountCameras / 8) * priceAdaptor;
+
+		if (amountCameras <= 8) {
+			dvr = priceDvr4Ch;
+		} else if (amountCameras > 8 && amountCameras <= 16) {
+			dvr = priceDvr8Ch;
+		} else if (amountCameras > 16 && amountCameras <= 32) {
+			dvr = priceDvr16Ch;
 		} else {
-			dvr = 16000;
+			dvr = priceDvr32Ch;
 		};
 
-		metithes = 3000;
+		metithes = priceMetithes;
 
-		works = (camerasIndor + camerasOutdoor) * 2500;
+		works = amountCameras * priceWorks;
 
 		if (height8m.checked) {
-			works += works * 0.1;
+			works += works * 0.2;
 		};
 
 		if (street.checked) {
-			works += works * 0.1;
+			works += works * 0.3;
 		};
 
 		if (undeground.checked) {
-			works += works * 0.2;
+			works += works * 0.5;
 		};
 
 		let items = [camerasIndor, camerasOutdoor, cable, connectors, decore, adaptor, monitor, hdd, dvr, metithes, works];
