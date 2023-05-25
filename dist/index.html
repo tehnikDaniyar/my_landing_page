@@ -193,13 +193,11 @@
 								<div class="calc-alarmsystem__body">
 									<div class="calc-alarmsystem__item">
 										<label class="calc-alarmsystem__label">Укажите количество комнат<input
-												class="calc-alarmsystem__input calc-alarmsystem__input_amount-rooms"
-												type="number"></label>
+												class="calc-alarmsystem__input" type="number" id="amountRooms"></label>
 									</div>
 									<div class="calc-alarmsystem__item">
 										<label class="calc-alarmsystem__label">Укажите количество окон<input
-												class="calc-alarmsystem__input calc-alarmsystem__input_amount-windows"
-												type="number"></label>
+												class="calc-alarmsystem__input" type="number" id="amountWindows"></label>
 									</div>
 									<div class="calc-alarmsystem__item">
 										<div class="calc-alarmsystem__methods methods">
@@ -212,22 +210,15 @@
 											</select>
 										</div>
 									</div>
-
-
 									<div class="calc-alarmsystem__item">
 										<div class="calc-alarmsystem__options options">
-											<label class="calc-alarmsystem__label"><input type="checkbox"
-													class="calc-alarmsystem__input calc-alarmsystem__input_option"
-													id="alarm-open"></label>
-											<label class="calc-alarmsystem__label">В кабельных каналах<input type="checkbox"
-													class="calc-alarmsystem__input calc-alarmsystem__input_option"
-													id="alarm-decore"></label>
-											<label class="calc-alarmsystem__label">За фальш-потолком<input type="checkbox"
-													class="calc-alarmsystem__input calc-alarmsystem__input_option"
-													id="alarm-armstrong"></label>
-											<label class="calc-alarmsystem__label">Коминированный<input type="checkbox"
-													class="calc-alarmsystem__input calc-alarmsystem__input_option"
-													id="alarm-combo"></label>
+											<div class="options__title">Выбирите дополнительные опции</div>
+											<label class="options__label">Штробление<input type="checkbox" class="options__input"
+													id="hidden"></label>
+											<label class="options__label">Высота помещений более 5метров<input type="checkbox"
+													class="options__input" id="height"></label>
+											<label class="options__label">Дорогой ремонт помещения<input type="checkbox"
+													class="options__input" id="expencive"></label>
 										</div>
 									</div>
 								</div>
