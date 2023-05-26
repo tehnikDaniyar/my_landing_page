@@ -128,50 +128,61 @@
 							</select>
 						</div>
 						<div class="prices__categoryes categoryes">
-							<div class="categoryes__item categoryes__item_video calc-video" id="prices-video">
-								<div class="calc-video__amountIndoorCameras">
-									<label for="amountIndoorCameras">Укажите количество внутренних камер</label>
-									<input value="1" type="number" id="amountIndoorCameras" min="1" max="32" step="1">
-								</div>
-								<div class="calc-video__amountOutdoorCameras">
-									<label for="amountOutdoorCameras">Укажите количество уличных камер камер</label>
-									<input value="0" type="number" id="amountOutdoorCameras" min="0" max="32" step="1">
-								</div>
-								<div class="calc-video__installationMethod">
-									<label for="installationMethod">Выбирете способ монтажа кабеля</label>
-									<select name="" id="installationMethod">
-										<option value="open">Открытый способ</option>
-										<option value="amstrong">За фальш-потолком</option>
-										<option value="decor">В кабельных каналах</option>
-										<option value="combined">Коминированный из всех перечисленых</option>
-									</select>
-								</div>
-								<div class="calc-video__aditionalOptions aditionalOption">
-									<h4>Выбирите дополнительные опции</h4>
-									<div class="aditionalOption__items">
-										<label>Установка на высоте более 8
-											метров<input type="checkbox" name="" id="height8m"></label>
-										<label>Протяжка улиного кабеля по опорам на
-											стальном троссе<input type="checkbox" name="" id="street"></label>
-										<label>Уклада кабеля в траншеи или по
-											подземным коммуникациям<input type="checkbox" name="" id="undeground"></label>
+							<div class="categoryes__item" id="prices-video">
+								<div class="categoryes__wrapper">
+									<div class="categoryes__inner">
+										<label class="categoryes__label" for="amountIndoorCameras">Укажите количество внутренних
+											камер</label>
+										<input class="categoryes__input" value="1" type="number" id="amountIndoorCameras" min="1"
+											max="32" step="1">
 									</div>
-								</div>
-								<div class="calc-video__res">
+									<div class="categoryes__inner">
+										<label class="categoryes__label" for="amountOutdoorCameras">Укажите количество уличных
+											камер
+											камер</label>
+										<input class="categoryes__input" value="0" type="number" id="amountOutdoorCameras" min="0"
+											max="32" step="1">
+									</div>
+									<div class="categoryes__inner">
+										<label class="categoryes__label" for="installationMethod">Выбирете способ монтажа
+											кабеля</label>
+										<select class="categoryes__select" id="installationMethod">
+											<option class="categoryes__option" value="open">Открытый способ</option>
+											<option class="categoryes__option" value="amstrong">За фальш-потолком</option>
+											<option class="categoryes__option" value="decor">В кабельных каналах</option>
+											<option class="categoryes__option" value="combined">Коминированный из всех перечисленых
+											</option>
+										</select>
+									</div>
+									<div class="categoryes__inner">
+										<div class="categoryes__additional">
+											<div class="categoryes__title">Выбирите дополнительные опции</div>
+											<label class="categoryes__label">Установка на высоте более 8
+												метров<input class="categoryes__input" type="checkbox" id="height8m"></label>
+											<label class="categoryes__label">Протяжка улиного кабеля по опорам на
+												стальном троссе<input class="categoryes__input" type="checkbox" id="street"></label>
+											<label class="categoryes__label">Уклада кабеля в траншеи или по
+												подземным коммуникациям<input class="categoryes__input" type="checkbox"
+													id="undeground"></label>
+										</div>
+									</div>
+									<div class="categoryes__res">
+									</div>
 								</div>
 							</div>
-							<div class="categoryes__item categoryes__item_alarm-system calc-alarmsystem"
-								id="prices-alarmSystem">
-								<div class="calc-alarmsystem__body">
-									<div class="calc-alarmsystem__item">
-										<label class="calc-alarmsystem__label">Укажите количество комнат<input
-												class="calc-alarmsystem__input" type="number" id="amountRooms"></label>
+							<div class="categoryes__item" id="prices-alarmSystem">
+								<div class="categoryes__wrapper">
+									<div class="categoryes__inner">
+										<label class="categoryes__label" for="amountRooms">Укажите количество
+											комнат</label>
+										<input class="categoryes__input" type="number" id="amountRooms" min="1" value="1">
 									</div>
-									<div class="calc-alarmsystem__item">
-										<label class="calc-alarmsystem__label">Укажите количество окон<input
-												class="calc-alarmsystem__input" type="number" id="amountWindows"></label>
+									<div class="categoryes__inner">
+										<label class="categoryes__label" for="amountWindows">Укажите количество
+											окон</label>
+										<input class="categoryes__input" type="number" id="amountWindows" min="1" value="1">
 									</div>
-									<div class="calc-alarmsystem__item">
+									<div class="categoryes__inner">
 										<div class="calc-alarmsystem__methods methods">
 											<div class="methods__title">Укажите способ монтажа кабеля</div>
 											<select class="methods__select">
@@ -182,20 +193,23 @@
 											</select>
 										</div>
 									</div>
-									<div class="calc-alarmsystem__item">
+									<div class="categoryes__inner">
 										<div class="calc-alarmsystem__options options">
 											<div class="options__title">Выбирите дополнительные опции</div>
-											<label class="options__label">Штробление<input type="checkbox" class="options__input"
+											<label class="categoryes__label" class="options__label">Штробление<input
+													class="categoryes__input" type="checkbox" class="options__input"
 													id="hidden"></label>
-											<label class="options__label">Высота помещений более 5метров<input type="checkbox"
-													class="options__input" id="height"></label>
-											<label class="options__label">Дорогой ремонт помещения<input type="checkbox"
-													class="options__input" id="expencive"></label>
+											<label class="categoryes__label" class="options__label">Высота помещений более
+												5метров<input class="categoryes__input" type="checkbox" class="options__input"
+													id="height"></label>
+											<label class="categoryes__label" class="options__label">Дорогой ремонт помещения<input
+													class="categoryes__input" type="checkbox" class="options__input"
+													id="expencive"></label>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="categoryes__item categoryes__item_acces-control" id="prices-accesControl">
+							<div class="categoryes__item" id="prices-accesControl">
 								acces-control
 							</div>
 						</div>

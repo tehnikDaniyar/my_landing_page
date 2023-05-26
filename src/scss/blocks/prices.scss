@@ -66,14 +66,6 @@
 	&__acces-control {}
 }
 
-
-.prices {
-
-	/* .prices__categoryes */
-
-	&__categoryes {}
-}
-
 //=============caregories======================================
 
 .categoryes {
@@ -87,10 +79,8 @@
 		left: -100%;
 		top: 0;
 		width: 100%;
-		// height: 100%;
 		border: 3px solid white;
 		box-shadow: 1px 15px 30px 8px black;
-		// text-align: center;
 		transition: all 0.5s ease 0s;
 		opacity: 0;
 		visibility: hidden;
@@ -101,107 +91,87 @@
 			visibility: visible;
 			opacity: 1;
 		}
-
-		/* .categoryes__item_video */
-
-		&_video {}
-
-		/* .categoryes__item_alarm-system */
-
-		&_alarm-system {}
-
-		/* .categoryes__item_acces-control */
-
-		&_acces-control {}
 	}
-}
 
+	/* .categoryes__wrapper */
 
+	&__wrapper {
+		width: 70%;
+		// margin: 0 auto;
+	}
 
-//================calc-video====================================
+	/* .categoryes__inner */
 
-.calc-video {
+	&__inner {
+		display: flex;
+		justify-content: space-between;
 
-	h4 {
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+
+	/* .categoryes__label */
+
+	&__label {
 		font-size: 26px;
-		text-align: center;
-		margin-bottom: 20px;
 	}
 
-	&>div:not(:last-child) {
+	/* .categoryes__input */
+
+	&__input {
+		width: 60px;
+		height: 40px;
+		background-color: rgb(44, 44, 69);
+		border: 2px solid white;
+		font-size: 22px;
+		padding: 5px 10px;
+	}
+
+	/* .categoryes__select */
+
+	&__select {
+		background-color: rgb(44, 44, 69);
+		border: 2px solid white;
+		font-size: 22px;
+		padding: 5px 10px;
+	}
+
+	/* .categoryes__option */
+
+	&__option {
+		color: green;
+	}
+
+	/* .categoryes__title */
+
+	&__title {
+		text-align: center;
+		font-size: 26px;
+		font-weight: bold;
 		margin-bottom: 30px;
 	}
 
-	&>div {
-		max-width: 70%;
-		display: flex;
-		justify-content: space-between;
-	}
+	/* .categortes__additional */
 
-	label {
-		font-size: 24px;
-		margin-right: 20px;
-	}
-
-	input[type="number"] {
-		border: 1px solid white;
-		height: 60px;
-		padding: 10px;
-		font-size: 20px;
-		width: 150px;
-	}
-
-	select {
-		border: 1px solid white;
-		padding: 10px;
-		font-size: 20px;
-	}
-
-	/* .calc-video__amountIndoorCameras */
-
-	&__amountIndoorCameras {}
-
-	/* .calc-video__amountOutdoorCameras */
-
-	&__amountOutdoorCameras {}
-
-	/* .calc-video__installationMethod */
-
-	&__installationMethod {}
-
-	/* .calc-video__aditionalOptions */
-
-	&__aditionalOptions {
-		flex-direction: column;
-	}
-
-	/* .calc-video__res */
-
-	&__res {
-		font-size: 38px;
-	}
-}
-
-.aditionalOption {
-
-	/* .aditionalOption__items */
-
-	&__items {
+	&__additional {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
-
-		input {
-			margin-left: 30px;
-			width: 30px;
-			height: 30px;
-		}
 
 		label {
-			margin: 0 0 30px 0;
 			display: flex;
-			align-items: center;
-			width: 100%;
 			justify-content: space-between;
+			margin-bottom: 20px;
+			align-items: center;
 		}
 	}
+
+	/* .categoryes__res */
+
+	&__res {
+		font-size: 32px;
+	}
+
+
 }

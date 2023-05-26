@@ -4,7 +4,6 @@ export const pricesCalc = () => {
 	//======================choose categoryes===========================================
 	const selector = document.querySelector('#selector');
 	const categoryesItems = document.querySelectorAll('.categoryes__item')
-	console.log(categoryesItems);
 	const pricesVideo = document.querySelector('#prices-video');
 	const pricesAlarmSystem = document.querySelector('#prices-alarmSystem');
 	const pricesAccesControl = document.querySelector('#prices-accesControl');
@@ -34,7 +33,7 @@ export const pricesCalc = () => {
 	const height8m = document.querySelector('#height8m');
 	const street = document.querySelector('#street');
 	const undeground = document.querySelector('#undeground');
-	const res = document.querySelector('.calc-video__res');
+	const res = document.querySelector('.categoryes__res');
 	getResCalcVideo();
 
 	const inputs = [amountIndoorCameras, amountOutdoorCameras, installationMethod, height8m, street, undeground];
@@ -130,6 +129,6 @@ export const pricesCalc = () => {
 		let items = [camerasIndor, camerasOutdoor, cable, connectors, decore, adaptor, monitor, hdd, dvr, metithes, works];
 
 		console.log(items);
-		res.innerHTML = `ИТОГО ${items.reduce((res, item) => res + item, 0)}`
+		res.innerHTML = `ИТОГО: ${items.reduce((res, item) => res + item, 0)}`
 	}
 }
