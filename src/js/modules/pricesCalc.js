@@ -128,7 +128,6 @@ export const pricesCalc = () => {
 
 		let items = [camerasIndor, camerasOutdoor, cable, connectors, decore, adaptor, monitor, hdd, dvr, metithes, works];
 
-		console.log(items);
 		res.innerHTML = `ИТОГО: ${items.reduce((res, item) => res + item, 0)}`
 	}
 }

@@ -211,19 +211,18 @@
 										<input class="categoryes__input" type="number" id="amountWindows" min="1" value="1">
 									</div>
 									<div class="categoryes__inner">
-										<div class="calc-alarmsystem__methods methods">
-											<div class="methods__title">Укажите способ монтажа кабеля</div>
-											<select class="methods__select">
-												<option value="open">Открытым способом</option>
-												<option value="decore">В кабельных каналах</option>
-												<option value="armstrong">За фальш потолком</option>
-												<option value="combo">Коминированный</option>
-											</select>
-										</div>
+										<label class="categoryes__label" for="alarm-system-select">Выбирите способ прокладки
+											кабеля</label>
+										<select class="categoryes__select" id="alarm-system-select">
+											<option class="categoryes__option" value="open">Открытым способом</option>
+											<option class="categoryes__option" value="decore">В кабельных каналах</option>
+											<option class="categoryes__option" value="armstrong">За фальш потолком</option>
+											<option class="categoryes__option" value="combo">Коминированный</option>
+										</select>
 									</div>
 									<div class="categoryes__inner">
-										<div class="calc-alarmsystem__options options">
-											<div class="options__title">Выбирите дополнительные опции</div>
+										<div class="categoryes__additional">
+											<div class="categoryes__title">Выбирите дополнительные опции</div>
 											<label class="categoryes__label" class="options__label">Штробление<input
 													class="categoryes__input" type="checkbox" class="options__input"
 													id="hidden"></label>
@@ -235,6 +234,7 @@
 													id="expencive"></label>
 										</div>
 									</div>
+									<div class="categoryes__res"></div>
 								</div>
 							</div>
 							<div class="categoryes__item" id="prices-accesControl">
