@@ -6,8 +6,9 @@ export const chooseCategoryes = () => {
 	const pricesAccesControl = document.querySelector('#prices-accesControl');
 
 	selector.addEventListener('change', function () {
-		categoryesItems.forEach(item => item.classList.remove('_active'));
+		console.log('change');
 
+		categoryesItems.forEach(item => item.classList.remove('_active'));
 		const value = this.value;
 		if (value === 'video') {
 			pricesVideo.classList.add('_active');

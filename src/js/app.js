@@ -6,6 +6,7 @@ import { observerForAnimation } from "./modules/observerForAnimation.js";
 import { chooseCategoryes } from "./modules/chooseCategoryes.js";
 import { calcVideo } from "./modules/calcVideo.js";
 import { calcAlarmSystem } from "./modules/calcAlarmSystem.js";
+import { modalWindows } from "./modules/modalWindows.js";
 
 flsFunctions.isWebp();
 observerForHeader();
@@ -15,3 +16,4 @@ observerForAnimation();
 chooseCategoryes();
 calcVideo();
 calcAlarmSystem();
+modalWindows();

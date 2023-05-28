@@ -121,7 +121,7 @@
 					<div class="prices__body">
 						<div class="prices__choose-categoryes">
 							<select name="category" id="selector">
-								<option selected disabled>выберите категорию</option>
+								<option value="start" selected disabled>выберите категорию</option>
 								<option value="video">видеонаблюдение</option>
 								<option value="alarm-system">сигнализация</option>
 								<option value="acces-control">контроль доступа</option>
@@ -134,14 +134,14 @@
 										<label class="categoryes__label" for="amountIndoorCameras">Укажите количество внутренних
 											камер</label>
 										<input class="categoryes__input" value="1" type="number" id="amountIndoorCameras" min="1"
-											max="32" step="1">
+											max="32">
 									</div>
 									<div class="categoryes__inner">
 										<label class="categoryes__label" for="amountOutdoorCameras">Укажите количество уличных
 											камер
 											камер</label>
 										<input class="categoryes__input" value="0" type="number" id="amountOutdoorCameras" min="0"
-											max="32" step="1">
+											max="32">
 									</div>
 									<div class="categoryes__inner">
 										<label class="categoryes__label" for="installationMethod">Выбирете способ монтажа
@@ -169,6 +169,7 @@
 									<div class="categoryes__res">
 										<div id="resVideo"></div>
 									</div>
+									<button class="categoryes__closeButton" type="button"></button>
 								</div>
 							</div>
 							<div class="categoryes__item" id="prices-alarmSystem">
@@ -215,10 +216,12 @@
 									<div class="categoryes__res">
 										<div id="resAlarmSysytem"></div>
 									</div>
+									<button class="categoryes__closeButton" type="button"></button>
 								</div>
 							</div>
 							<div class="categoryes__item" id="prices-accesControl">
 								acces-control
+								<button class="categoryes__closeButton" type="button"></button>
 							</div>
 						</div>
 					</div>
