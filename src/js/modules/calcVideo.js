@@ -1,39 +1,11 @@
-
-export const pricesCalc = () => {
-
-	//======================choose categoryes===========================================
-	const selector = document.querySelector('#selector');
-	const categoryesItems = document.querySelectorAll('.categoryes__item')
-	const pricesVideo = document.querySelector('#prices-video');
-	const pricesAlarmSystem = document.querySelector('#prices-alarmSystem');
-	const pricesAccesControl = document.querySelector('#prices-accesControl');
-
-	selector.addEventListener('change', function () {
-		categoryesItems.forEach(item => item.classList.remove('_active'));
-
-		const value = this.value;
-		if (value === 'video') {
-			pricesVideo.classList.add('_active');
-		};
-
-		if (value === 'alarm-system') {
-			pricesAlarmSystem.classList.add('_active');
-		};
-
-		if (value === 'acces-control') {
-			pricesAccesControl.classList.add('_active');
-		};
-	});
-
-
-	//======================calc video===========================================
+export const calcVideo = () => {
 	const amountIndoorCameras = document.querySelector('#amountIndoorCameras');
 	const amountOutdoorCameras = document.querySelector('#amountOutdoorCameras');
 	const installationMethod = document.querySelector('#installationMethod');
 	const height8m = document.querySelector('#height8m');
 	const street = document.querySelector('#street');
 	const undeground = document.querySelector('#undeground');
-	const res = document.querySelector('.categoryes__res');
+	const res = document.querySelector('#resVideo');
 	getResCalcVideo();
 
 	const inputs = [amountIndoorCameras, amountOutdoorCameras, installationMethod, height8m, street, undeground];
@@ -54,24 +26,24 @@ export const pricesCalc = () => {
 		let dvr;
 		let metithes;
 		let works;
-		let price;
+		let priceVideo;
 
-		await fetch('../files/price.json').then(response => response.json()).then(json => price = json)
-		let priceCameraIndoor = price["camerasIndoor"];
-		let priceCameraOutdoor = price["camerasOutdoor"];
-		let priceCable = price["cable"];
-		let priceConnectors = price["connectors"];
-		let priceDecore = price["decore"];
-		let priceMonitorSmall = price["monitorSmall"];
-		let priceMonitorBig = price["monitorBig"];
-		let priceHdd = price["hdd"];
-		let priceAdaptor = price["adaptor"];
-		let priceDvr4Ch = price["dvr4ch"];
-		let priceDvr8Ch = price["dvr8ch"];
-		let priceDvr16Ch = price["dvr16ch"];
-		let priceDvr32Ch = price["dvr32ch"];
-		let priceMetithes = price["metithes"];
-		let priceWorks = price["works"];
+		await fetch('../files/price.json').then(response => response.json()).then(json => priceVideo = json)
+		let priceCameraIndoor = priceVideo["camerasIndoor"];
+		let priceCameraOutdoor = priceVideo["camerasOutdoor"];
+		let priceCable = priceVideo["cable"];
+		let priceConnectors = priceVideo["connectors"];
+		let priceDecore = priceVideo["decore"];
+		let priceMonitorSmall = priceVideo["monitorSmall"];
+		let priceMonitorBig = priceVideo["monitorBig"];
+		let priceHdd = priceVideo["hdd"];
+		let priceAdaptor = priceVideo["adaptor"];
+		let priceDvr4Ch = priceVideo["dvr4ch"];
+		let priceDvr8Ch = priceVideo["dvr8ch"];
+		let priceDvr16Ch = priceVideo["dvr16ch"];
+		let priceDvr32Ch = priceVideo["dvr32ch"];
+		let priceMetithes = priceVideo["metithes"];
+		let priceWorks = priceVideo["works"];
 
 
 		camerasIndor = Math.abs(+amountIndoorCameras.value) * priceCameraIndoor;
