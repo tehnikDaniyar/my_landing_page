@@ -7,6 +7,7 @@ import { chooseCategoryes } from "./modules/chooseCategoryes.js";
 import { calcVideo } from "./modules/calcVideo.js";
 import { calcAlarmSystem } from "./modules/calcAlarmSystem.js";
 import { modalWindows } from "./modules/modalWindows.js";
+import { feedback } from "./modules/feedback.js";
 
 flsFunctions.isWebp();
 observerForHeader();
@@ -17,3 +18,4 @@ chooseCategoryes();
 calcVideo();
 calcAlarmSystem();
 modalWindows();
+feedback();
