@@ -275,6 +275,28 @@
 					</div>
 				</div>
 			</section>
+			<section class="page__feedback feedback">
+				<div class="feedback_container _container">
+					<form action="" class="feedback__form">
+						<input type="text" class="feedback__input" id="name" placeholder="Введите ваше имя">
+						<input type="tel" class="feedback__input" id="tel" placeholder="Укажите ваш номер телефона">
+						<select id="select" class="feedback__select">
+							<option disabled selected>Выбирите категорию работ</option>
+							<option value="video">Видеонаблюдение</option>
+							<option value="alarm">Сигнализация</option>
+							<option value="acces-control">СКУД</option>
+						</select>
+						<textarea class="feedback__message" name="textarea" id="message"
+							placeholder="Опишите вкратце что нужно сделать"></textarea>
+						<div class="feedback__agreement">
+							<input class="feedback__checkbox" type="checkbox" name="checkbox" id="agreement" checked>
+							<label class="feedback__label" for="agreement">Я согласен на обработку персональных данных</label>
+						</div>
+						<button class="feedback__button" type="submit">Отправить</button>
+						<div class="feedback__confirmation">Спасибо!!! Наш менеджер свяжется с вами в ближайшее время</div>
+					</form>
+				</div>
+			</section>
 		</main>
 		<footer>I footer</footer>
 	</div>
