@@ -28,7 +28,7 @@ export const calcVideo = () => {
 		let works;
 		let priceVideo;
 
-		await fetch('../files/price.json').then(response => response.json()).then(json => priceVideo = json)
+		await fetch('../files/priceVideo.json').then(response => response.json()).then(json => priceVideo = json)
 		let priceCameraIndoor = priceVideo["camerasIndoor"];
 		let priceCameraOutdoor = priceVideo["camerasOutdoor"];
 		let priceCable = priceVideo["cable"];
@@ -52,7 +52,6 @@ export const calcVideo = () => {
 		cable = (amountCameras * 35) * priceCable;
 		connectors = (amountCameras) * 3 * priceConnectors;
 
-		console.log(installationMethod.value);
 
 		if (installationMethod.value === 'decor') {
 			decore = (amountCameras * 35) * 0.6 * priceDecore;

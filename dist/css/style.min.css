@@ -1319,6 +1319,7 @@ body._scrollOff {
   /* .categoryes__wrapper */
   /* .categoryes__closeButton*/
   /* .categoryes__inner */
+  /* categoryes__options */
   /* .categoryes__label */
   /* .categoryes__input */
   /* .categoryes__select */
@@ -1332,26 +1333,24 @@ body._scrollOff {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   z-index: 50;
   transition: all 0.5s ease 0s;
   opacity: 0;
   visibility: hidden;
-  padding: 80px;
   display: flex;
-  align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
 }
 .categoryes__item._active {
   visibility: visible;
   opacity: 1;
 }
 .categoryes__item._active .categoryes__wrapper {
-  top: 50%;
+  top: 10%;
   opacity: 1;
   visibility: visible;
-  transform: translateY(-50%);
 }
 .categoryes__wrapper {
   position: absolute;
@@ -1362,13 +1361,13 @@ body._scrollOff {
   background-color: rgb(44, 44, 69);
   padding: 40px;
   border: 3px solid white;
-  padding-right: 20%;
   transition: all 0.5s ease 0.3s;
+  padding-right: clamp(2.5rem, 1.591rem + 4.55vw, 5rem);
 }
 .categoryes__closeButton {
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 30px;
+  right: 20px;
   display: inline-block;
   width: 40px;
   height: 20px;
@@ -1391,12 +1390,36 @@ body._scrollOff {
 .categoryes__inner {
   display: flex;
   justify-content: space-between;
+  max-width: 800px;
+  align-items: start;
 }
 .categoryes__inner:not(:last-child) {
   margin-bottom: 30px;
 }
+@media (max-width: 767px) {
+  .categoryes__inner {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .categoryes__inner label {
+    text-align: center;
+  }
+}
+.categoryes__options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 1110px) {
+  .categoryes__options {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+  }
+}
 .categoryes__label {
-  font-size: 26px;
+  font-size: clamp(1.25rem, 1.114rem + 0.68vw, 1.625rem);
 }
 .categoryes__input {
   width: 60px;
@@ -1411,6 +1434,7 @@ body._scrollOff {
   border: 2px solid white;
   font-size: 22px;
   padding: 5px 10px;
+  max-width: 300px;
 }
 .categoryes__option {
   color: green;
@@ -1426,12 +1450,30 @@ body._scrollOff {
   display: flex;
   flex-direction: column;
 }
-.categoryes__additional label {
+.categoryes__res {
+  font-size: clamp(1.625rem, 1.489rem + 0.68vw, 2rem);
+}
+
+.additional__title {
+  text-align: center;
+  font-size: clamp(1.25rem, 1.114rem + 0.68vw, 1.625rem);
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.additional__item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  align-items: center;
 }
-.categoryes__res {
-  font-size: 32px;
+.additional__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .additional__item {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .additional__item label {
+    text-align: center;
+  }
 }
