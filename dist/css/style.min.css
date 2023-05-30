@@ -1484,6 +1484,8 @@ body._scrollOff {
   /* .feedback_container */
   /* .feedback__form */
   /* .feedback__input */
+  /* .feedback__inner */
+  /* .feedback__errorMessage */
   /* .feedback__select */
   /* .feedback__message */
   /* .feedback__agreement */
@@ -1503,6 +1505,34 @@ body._scrollOff {
   border: 1px solid white;
   font-size: 26px;
   margin-bottom: 30px;
+  transition: box-shadow 0.3s ease;
+}
+.feedback__input:focus {
+  box-shadow: 0px 0px 10px white;
+}
+.feedback__input.error {
+  box-shadow: 0px 0px 10px red;
+}
+.feedback__inner {
+  position: relative;
+}
+.feedback__inner.error .feedback__errorMessage {
+  left: 400px;
+  opacity: 1;
+  visibility: visible;
+}
+.feedback__errorMessage {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  opacity: 0;
+  visibility: hidden;
+  width: 60%;
+  font-size: 20px;
+  background-color: rgba(101, 101, 47, 0.8);
+  padding: 10px;
+  border: 1px solid white;
+  transition: all 0.8s ease;
 }
 .feedback__select {
   width: 100%;
@@ -1511,6 +1541,13 @@ body._scrollOff {
   font-size: 26px;
   margin-bottom: 30px;
   background-color: rgb(45, 42, 42);
+  transition: box-shadow 0.3s ease;
+}
+.feedback__select:focus {
+  box-shadow: 0px 0px 10px white;
+}
+.feedback__select.error {
+  box-shadow: 0px 0px 10px red;
 }
 .feedback__message {
   width: 70%;
@@ -1519,6 +1556,10 @@ body._scrollOff {
   border: 1px solid white;
   font-size: 26px;
   margin-bottom: 30px;
+  transition: box-shadow 0.3s ease;
+}
+.feedback__message:focus {
+  box-shadow: 0px 0px 10px white;
 }
 .feedback__agreement {
   display: flex;
@@ -1564,4 +1605,9 @@ body._scrollOff {
   font-size: 32px;
   visibility: hidden;
   opacity: 0;
+  transition: all 0.5s ease;
+}
+.feedback__confirmation.show {
+  visibility: visible;
+  opacity: 1;
 }

@@ -249,16 +249,29 @@
 			</section>
 			<section class="page__feedback feedback">
 				<div class="feedback_container _container">
-					<form action="" class="feedback__form">
-						<input type="text" class="feedback__input" id="name" placeholder="Введите ваше имя">
-						<input type="tel" class="feedback__input" id="tel" placeholder="Укажите ваш номер телефона">
-						<select id="select" class="feedback__select">
-							<option disabled selected>Выбирите категорию работ</option>
-							<option value="video">Видеонаблюдение</option>
-							<option value="alarm">Сигнализация</option>
-							<option value="acces-control">СКУД</option>
-						</select>
-						<textarea class="feedback__message" name="textarea" id="message"
+					<form action="#" method="post" class="feedback__form">
+						<div class="feedback__inner">
+							<input type="text" class="feedback__input" id="name" name="name" placeholder="Введите ваше имя *">
+							<div class="feedback__errorMessage">Имя не может быть пустым</div>
+						</div>
+						<div class="feedback__inner">
+							<input type="tel" class="feedback__input" id="tel" name="tel"
+								placeholder="Укажите ваш номер телефона *">
+							<div class="feedback__errorMessage">Возможно вы забыли добавить + к 996, или ввели
+								неверное количество
+								цифр</div>
+						</div>
+						<div class="feedback__inner">
+							<select id="select" class="feedback__select" name="select">
+								<option value="none" disabled selected>Выбирите категорию работ *</option>
+								<option value="video">Видеонаблюдение</option>
+								<option value="alarm">Сигнализация</option>
+								<option value="acces-control">СКУД</option>
+							</select>
+							<div class="feedback__errorMessage">Необходимо выбрать категорию</div>
+						</div>
+
+						<textarea class="feedback__message" name="message" id="message"
 							placeholder="Опишите вкратце что нужно сделать"></textarea>
 						<div class="feedback__agreement">
 							<input class="feedback__checkbox" type="checkbox" name="checkbox" id="agreement" checked>
