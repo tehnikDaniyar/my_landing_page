@@ -54,7 +54,7 @@ export const feedback = () => {
 			let formDate = new FormData(form);
 			console.log(formDate.get('name'), formDate.get('tel'), formDate.get('select'), formDate.get('message'));
 
-			let response = await fetch('../files/server/form.json', { ///files/server/form.json
+			let response = await fetch('http://daniyardev.atwebpages.com/files/sendmailer.php', { ///files/server/form.json
 				method: "POST",
 				body: formDate
 			});

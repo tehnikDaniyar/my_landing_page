@@ -7,11 +7,7 @@
 
 	/* .prices__title */
 
-	&__title {
-		font-size: clamp(1.75rem, 1.205rem + 2.73vw, 3.25rem);
-		text-align: center;
-		margin-bottom: 40px;
-	}
+	&__title {}
 
 	/* .prices__body */
 
@@ -28,7 +24,7 @@
 			width: 100%;
 			border: 2px solid white;
 			padding: 20px 10px;
-			font-size: 32px;
+			font-size: clamp(1.25rem, 1.114rem + 0.68vw, 1.625rem);
 			background-color: rgb(44, 44, 69);
 
 			&:focus {
