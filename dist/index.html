@@ -4,28 +4,31 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230601175209">
 	<title>main</title>
 </head>
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header class="header" id="header">
 	<div class="header__container _container">
 		<nav class="header__menu">
 			<div class="header__logo"><a class="header__link" href="#">Шабаш-Монтаж-Сервис</a></div>
 			<ul class="header__list">
 				<li class="header__item">
-					<a href="#" class="header__link">Услуги</a>
+					<a href="#services" class="header__link">Услуги</a>
 				</li>
 				<li class="header__item">
-					<a href="#" class="header__link">Расценки</a>
+					<a href="#prices" class="header__link">Расценки</a>
 				</li>
 				<li class="header__item">
-					<a href="#" class="header__link">Галлерея</a>
+					<a href="#gallery" class="header__link">Галлерея</a>
 				</li>
 				<li class="header__item">
-					<a href="#" class="header__link">Контакты</a>
+					<a href="#feedback" class="header__link">Оставить заявку</a>
+				</li>
+				<li class="header__item">
+					<a href="#footer" class="header__link">Контакты</a>
 				</li>
 			</ul>
 		</nav>
@@ -36,7 +39,7 @@
 </header>
 <div class="observerMarker"></div>
 		<main class="page">
-			<section class="page__top top">
+			<section class="page__top top" id="top">
 				<div class="top__container _container">
 					<h1 class="top__title title">Монтаж охранных систем</h1>
 					<div class="top__slider">
@@ -72,13 +75,13 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__services services">
+			<section class="page__services services" id="services">
 				<div class="services__container _container">
 					<h2 class="services__title title">Услуги</h2>
 					<div class="services__body">
 						<div class="services__item item-services">
 							<div class="item-services__icon _ibg">
-								<img src="./img/services/video.jpg" alt="иконка видеонаблюдение">
+								<picture><source srcset="./img/services/video.webp" type="image/webp"><img src="./img/services/video.jpg" alt="иконка видеонаблюдение"></picture>
 							</div>
 							<div class="item-services__title">
 								<h3>Видеонаблюдение</h3>
@@ -101,7 +104,7 @@
 						</div>
 						<div class="services__item item-services">
 							<div class="item-services__icon">
-								<img src="./img/services/video.jpg" alt="иконка видеонаблюдение">
+								<picture><source srcset="./img/services/video.webp" type="image/webp"><img src="./img/services/video.jpg" alt="иконка видеонаблюдение"></picture>
 							</div>
 							<div class="item-services__title">
 								<h3>Видеонаблюдение</h3>
@@ -121,7 +124,7 @@
 						</div>
 						<div class="services__item item-services">
 							<div class="item-services__icon">
-								<img src="./img/services/video.jpg" alt="иконка видеонаблюдение">
+								<picture><source srcset="./img/services/video.webp" type="image/webp"><img src="./img/services/video.jpg" alt="иконка видеонаблюдение"></picture>
 							</div>
 							<div class="item-services__title">
 								<h3>Видеонаблюдение</h3>
@@ -143,7 +146,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__prices prices">
+			<section class="page__prices prices" id="prices">
 				<div class="prices__container _container">
 					<h2 class="prices__title title">Расценки на услуги</h2>
 					<div class="prices__body">
@@ -275,7 +278,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__feedback feedback">
+			<section class="page__feedback feedback" id="feedback">
 				<div class="feedback__container _container">
 					<h2 class="feedback__title title">Вы можете оставить нам заявку</h2>
 					<form action="#" method="post" class="feedback__form">
@@ -310,104 +313,114 @@
 					</form>
 				</div>
 			</section>
-			<section class="page__gallery gallery">
+			<section class="page__gallery gallery" id="gallery">
 				<h2 class="gallery__title title">Наши работы</h2>
 				<div class="gallery__body">
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/01.jpg" alt="work">
+							<picture><source srcset="./img/gallery/01.webp" type="image/webp"><img src="./img/gallery/01.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/02.jpg" alt="work">
+							<picture><source srcset="./img/gallery/02.webp" type="image/webp"><img src="./img/gallery/02.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/03.jpg" alt="work">
+							<picture><source srcset="./img/gallery/03.webp" type="image/webp"><img src="./img/gallery/03.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/04.jpg" alt="work">
+							<picture><source srcset="./img/gallery/04.webp" type="image/webp"><img src="./img/gallery/04.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/05.jpg" alt="work">
+							<picture><source srcset="./img/gallery/05.webp" type="image/webp"><img src="./img/gallery/05.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/06.jpg" alt="work">
+							<picture><source srcset="./img/gallery/06.webp" type="image/webp"><img src="./img/gallery/06.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/07.jpg" alt="work">
+							<picture><source srcset="./img/gallery/07.webp" type="image/webp"><img src="./img/gallery/07.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/08.jpg" alt="work">
+							<picture><source srcset="./img/gallery/08.webp" type="image/webp"><img src="./img/gallery/08.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/09.jpg" alt="work">
+							<picture><source srcset="./img/gallery/09.webp" type="image/webp"><img src="./img/gallery/09.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/10.jpg" alt="work">
+							<picture><source srcset="./img/gallery/10.webp" type="image/webp"><img src="./img/gallery/10.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/11.jpg" alt="work">
+							<picture><source srcset="./img/gallery/11.webp" type="image/webp"><img src="./img/gallery/11.jpg" alt="work"></picture>
 						</div>
 					</div>
 					<div class="gallery__item">
 						<div class="gallery__image _ibg">
-							<img src="./img/gallery/12.jpg" alt="work">
+							<picture><source srcset="./img/gallery/12.webp" type="image/webp"><img src="./img/gallery/12.jpg" alt="work"></picture>
 						</div>
 					</div>
 				</div>
 			</section>
 		</main>
-		<footer class="footer">
+		<footer class="footer" id="footer">
 	<div class="footer__container _container">
 		<nav class="footer__menu menu-footer">
+			<h3 class="menu-footer__title">Навигация по сайту</h3>
 			<ul class="menu-footer__list">
-				<li class="menu-footer__item"><a href="#" class="menu-footer__link">Услуги</a></li>
-				<li class="menu-footer__item"><a href="#" class="menu-footer__link">Расценки</a></li>
-				<li class="menu-footer__item"><a href="#" class="menu-footer__link">Галерея</a></li>
-				<li class="menu-footer__item"><a href="#" class="menu-footer__link">Оформить заказ</a></li>
+				<li class="menu-footer__item"><a href="#services" class="menu-footer__link">Услуги</a></li>
+				<li class="menu-footer__item"><a href="#prices" class="menu-footer__link">Расценки</a></li>
+				<li class="menu-footer__item"><a href="#gallery" class="menu-footer__link">Галерея</a></li>
+				<li class="menu-footer__item"><a href="#feedback" class="menu-footer__link">Оформить заказ</a></li>
 			</ul>
 		</nav>
 		<div class="footer__contacts contacts">
 			<div class="contacts__body">
 				<div class="contacts__social">
+					<h3 class="contacts__title">Социальные сети</h3>
+
 					<div class="contacts__item">
-						<a href="#" class="contacts__link">facebook</a>
+						<a href="www.facebook.com" class="contacts__link"><img class="contacts__icon"
+								src="./img/footer/facebook.svg" alt="facebook"><span>facebook</span></a>
 					</div>
 					<div class="contacts__item">
-						<a href="#" class="contacts__link">instagram</a>
+						<a href="www.instagram.com" class="contacts__link"><img class="contacts__icon"
+								src="./img/footer/instagram.svg" alt="instagram"><span>instagram</span></a>
 					</div>
 					<div class="contacts__item">
-						<a href="#" class="contacts__link">whatsapp</a>
+						<a href="www.whatsapp.com" class="contacts__link"><img class="contacts__icon"
+								src="./img/footer/whatsapp.png" alt="whatsapp">whatsapp</a>
 					</div>
 				</div>
 				<div class="contacts__phones">
+					<h3 class="contacts__title">Контакты</h3>
 					<div class="contacts__item">
-						<a href="tel:0505006019" class="contacts__link">0505006019</a>
+						<a href="tel:0505006019" class="contacts__link"><img class="contacts__icon"
+								src="./img/footer/megacom.png" alt="megacom"><span>0555006019</span></a>
 					</div>
 					<div class="contacts__item">
-						<a href="tel:0555006019" class="contacts__link">0555006019</a>
+						<a href="tel:0555006019" class="contacts__link"><img class="contacts__icon" src="./img/footer/O!.svg"
+								alt="O"><span>0505006019</span></a>
 					</div>
 					<div class="contacts__item">
-						<a href="tel:0770006019" class="contacts__link">0770006019</a>
+						<a href="tel:0770006019" class="contacts__link"><img class="contacts__icon"
+								src="./img/footer/beeline.svg" alt="beeline"><span>0770006019</span></a>
 					</div>
 				</div>
 			</div>
@@ -415,7 +428,7 @@
 	</div>
 </footer>
 	</div>
-	<script src="js/app.min.js"></script>
+	<script src="js/app.min.js?_v=20230601175209"></script>
 </body>
 
 </html>

@@ -1,15 +1,21 @@
 .footer {
 	padding: 40px 0;
-	background-color: #1b5f12;
+	background-color: #000000;
 
 	a {
-		font-size: 30px;
+		font-size: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+		color: rgb(194, 186, 186);
 	}
 
 	/* .footer__container */
 
 	&__container {
 		display: flex;
+
+		@media (max-width:980px) {
+			flex-direction: column;
+			gap: 40px;
+		}
 	}
 
 	/* .footer__menu */
@@ -17,24 +23,36 @@
 	&__menu {
 		flex: 1 1 50%;
 		text-align: center;
+
+		@media (max-width:980px) {
+			flex: 1 1 100%;
+		}
 	}
 
 	/* .footer__contacts */
 
 	&__contacts {
 		flex: 1 1 50%;
-		text-align: center;
+
+		@media (max-width:980px) {
+			flex: 1 1 100%;
+		}
 	}
 }
 
 .menu-footer {
+
+	&__title {
+		text-align: center;
+		font-size: clamp(1rem, 0.636rem + 1.82vw, 2rem);
+	}
+
 	/* .menu-footer__list */
 
 	&__list {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
-		height: 100%;
+		gap: 15px;
 	}
 
 	/* .menu-footer__item */
@@ -50,23 +68,35 @@
 
 .contacts {
 
+
+	&__title {
+		font-size: clamp(1rem, 0.636rem + 1.82vw, 2rem);
+		margin-bottom: 30px;
+	}
+
 	/* .contacts__body */
 
 	&__body {
 		display: flex;
-
 	}
 
 	/* .contacts__social */
 
 	&__social {
 		flex: 1 1 50%;
-		margin-bottom: 20px;
+
+		@media (max-width:980px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
 	}
 
 	/* .contacts__item */
 
 	&__item {
+
 		&:not(:last-child) {
 			margin-bottom: 20px;
 		}
@@ -76,6 +106,16 @@
 
 	&__link {
 		color: white;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__icon {
+		width: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
+		height: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
+		position: relative;
+		top: 3px;
 	}
 
 	/* .contacts__phones */
@@ -83,5 +123,10 @@
 	&__phones {
 		flex: 1 1 50%;
 
+		@media (max-width:980px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 }
