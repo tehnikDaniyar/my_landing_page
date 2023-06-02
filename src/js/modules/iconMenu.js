@@ -3,6 +3,9 @@ export const iconMenu = () => {
 	const headerList = document.querySelector('.header__list');
 	const body = document.querySelector('body');
 
+	const links = document.querySelectorAll('a[href*="#"]');
+
+
 	if (iconMenu) {
 		iconMenu.addEventListener('click', () => {
 			iconMenu.classList.toggle('_active');
@@ -15,5 +18,25 @@ export const iconMenu = () => {
 				body.classList.remove('_scrollOff');
 			};
 		});
+	};
+
+	//===============scrolling===============
+
+	if (links.length > 0) {
+		for (let link of links) {
+			link.addEventListener('click', function (e) {
+				const blockId = link.getAttribute('href');
+
+				document.querySelector(`${blockId}`).scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+
+				iconMenu.classList.remove('_active');
+				headerList.classList.remove('_show');
+				body.classList.remove('_scrollOff');
+				e.preventDefault();
+			});
+		};
 	};
 }

@@ -1081,13 +1081,13 @@ swiper-container .swiper-notification {
   overflow: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
-  scroll-behavior: smooth;
-  -webkit-transition: scroll-behavior 0.8s ease 0s;
-  -o-transition: scroll-behavior 0.8s ease 0s;
-  transition: scroll-behavior 0.8s ease 0s;
 }
 
 .wrapper {
