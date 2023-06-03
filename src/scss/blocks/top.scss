@@ -3,15 +3,13 @@
 
 	/* .top_container */
 
-	&_container {
-		position: relative;
-	}
+	&_container {}
 
 	/* .top__title */
 
 	&__title {
 		position: absolute;
-		top: 15%;
+		top: 3vh;
 		left: 0;
 		width: 100%;
 		z-index: 7;
@@ -24,7 +22,8 @@
 
 .swiper {
 	width: 100%;
-	height: 600px;
+	height: 100vh;
+	position: relative;
 }
 
 .swiper-wrapper {}

@@ -9,7 +9,6 @@ export const observerForAnimation = () => {
 
 		entries.forEach(entry => {
 			const { target, isIntersecting } = entry;
-			console.log(isIntersecting);
 
 			if (isIntersecting) {
 				target.classList.add('_show');

@@ -1,16 +1,25 @@
 export const renameImg = function () {
-	const body = document.querySelector('body');
-	body.classList.add('test')
-	console.log('qqqqqqqqqqqqqqq');
 
-	if (true) {
-		const images = document.querySelectorAll('img');
-		images.forEach(img => {
-			let src = img.src;
-			src = src.replace(/\.jpg/g, '.webp');
-			img.src = src;
-		});
-	} else {
-		console.log('body is havent class webp');
-	}
+	document.addEventListener("DOMContentLoaded", function () {
+		const body = document.querySelector('body');
+
+		if (body.classList.contains('webp')) {
+			const imgs = document.querySelectorAll('img[data-src]');
+
+			if (imgs.length > 0) {
+				imgs.forEach(img => {
+					checkSrc(img);
+				});
+
+				async function checkSrc(img) {
+					const webpSrc = img.dataset.src;
+					const response = await fetch(webpSrc);
+
+					if (response.ok) {
+						img.src = webpSrc;
+					};
+				};
+			};
+		};
+	});
 };

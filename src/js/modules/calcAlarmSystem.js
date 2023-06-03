@@ -9,7 +9,6 @@ export const calcAlarmSystem = () => {
 	const res = document.querySelector('#resAlarmSysytem	');
 
 	const inputs = [amountRooms, amountWindows, amountDoors, installationMethodAlarm, hidden, height, expencive];
-	console.log(inputs);
 
 	getResCalcAlarm();
 	inputs.forEach(input => {
@@ -33,8 +32,6 @@ export const calcAlarmSystem = () => {
 
 		await fetch('../files/priceAlarmySystem.json').then(response => response.json()).then(json => priceAlarmSystem = json);
 
-		console.log(priceAlarmSystem);
-
 		let priceMotionSensor = priceAlarmSystem["motionSensor"];
 		let priceGlassBreackSensor = priceAlarmSystem["glassBreackSensor"];
 		let priceOpenSensor = priceAlarmSystem["openSensor"];
@@ -48,8 +45,6 @@ export const calcAlarmSystem = () => {
 		let priceWorks = priceAlarmSystem["works"];
 
 		let prices = [priceMotionSensor, priceGlassBreackSensor, priceOpenSensor, priceCable, priceDecore, priceReservePower, priceAccumulator, priceControlPanel, priceSiren, priceTmKeys, priceWorks];
-
-		console.log(prices);
 
 		// "motionSensor": 900,
 		// "glassBreackSensor": 1200,
@@ -71,7 +66,6 @@ export const calcAlarmSystem = () => {
 		amountCable = Math.abs(+amountRooms.value) * 40;
 		cable = amountCable * priceCable;
 
-		console.log(installationMethodAlarm.value);
 		if (installationMethodAlarm.value === 'decore') {
 			decore = amountCable * 0.7 * priceDecore;
 		} else if (installationMethodAlarm.value === 'combined') {
@@ -87,8 +81,6 @@ export const calcAlarmSystem = () => {
 		tmKeys = priceTmKeys;
 
 		let items = [motionSensor, glassBreackSensor, openSensor, cable, decore, reservePower, accumulator, controlPanel, siren, tmKeys];
-
-		console.log(items);
 
 		let summMateriales = items.reduce((res, item) => res + item, 0);
 

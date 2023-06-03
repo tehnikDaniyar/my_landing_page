@@ -14,7 +14,9 @@ export function isWebp() {
 			document.querySelector('body').classList.add('webp');
 		} else {
 			document.querySelector('body').classList.add('no-webp');
-		}
+		};
+
+
 	});
 
 

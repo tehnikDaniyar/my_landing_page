@@ -15,7 +15,10 @@ export const feedback = () => {
 			let inputName = form.querySelector('#name');
 			let inputTel = form.querySelector('#tel');
 			let inputSelect = form.querySelector('#select');
+			let inputAgreement = form.querySelector('#agreement');
 			let error = 0;
+
+
 
 			if (inputName.value === "") {
 				inputName.classList.add("error");
@@ -24,7 +27,6 @@ export const feedback = () => {
 			} else {
 				inputName.classList.remove("error");
 				inputName.parentElement.classList.remove("error");
-
 			};
 
 			if (/^(0|\+996)\d+$/g.test(inputTel.value) && 10 === inputTel.value.length || inputTel.value.length === 13) {
@@ -40,11 +42,23 @@ export const feedback = () => {
 				inputSelect.classList.add('error');
 				inputSelect.parentElement.classList.add('error');
 				error++;
-
 			} else {
 				inputSelect.classList.remove('error');
 				inputSelect.parentElement.classList.remove('error');
 			};
+
+
+			if (!inputAgreement.checked) {
+				inputAgreement.classList.add('error');
+				inputAgreement.parentElement.classList.add('error');
+				error++;
+
+			} else {
+				inputAgreement.classList.remove('error');
+				inputAgreement.parentElement.classList.remove('error');
+			}
+
+			error > 0 ? scrollToElement(form) : null;
 
 			return error;
 		};
@@ -52,23 +66,39 @@ export const feedback = () => {
 		async function sendForm(form) {
 
 			let formDate = new FormData(form);
-			console.log(formDate.get('name'), formDate.get('tel'), formDate.get('select'), formDate.get('message'));
-
-			let response = await fetch('http://daniyardev.atwebpages.com/files/sendmailer.php', { ///files/server/form.json
-				method: "POST",
-				body: formDate
-			});
 
 
-			if (response.ok) {
-				let confirmation = document.querySelector('.feedback__confirmation');
-				confirmation.classList.add('show')
-				setTimeout(() => confirmation.classList.remove('show'), 3000);
+			try {
+				let response = await fetch('http://daniyardev.atwebpages.com/files/sendmailer.php', {
+					method: "POST",
+					body: formDate
+				});
+
+				let confirmationOk = document.querySelector('.feedback__confirmation_ok');
+
+				confirmationOk.classList.add('show')
+				setTimeout(() => confirmationOk.classList.remove('show'), 3000);
+				scrollToElement(form);
 				form.reset();
-				console.log(response);
-			} else {
-				alert('sendError')
+			} catch (error) {
+				let confirmationError = document.querySelector('.feedback__confirmation_error');
+				confirmationError.classList.add('show')
+				setTimeout(() => confirmationError.classList.remove('show'), 3000);
+				scrollToElement(form);
+				form.reset();
 			}
+
 		};
 	});
+
+	function scrollToElement(element) {
+		if (element) {
+			const positonElement = element.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+
+			window.scrollTo({
+				top: positonElement,
+				behavior: "smooth"
+			})
+		}
+	}
 }

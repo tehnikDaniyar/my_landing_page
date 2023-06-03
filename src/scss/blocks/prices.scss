@@ -140,6 +140,11 @@
 		&::before {
 			transform: rotate(-45deg);
 		}
+
+		@media (max-width:500px) {
+			top: 20px;
+			right: 10px;
+		}
 	}
 
 	/* .categoryes__inner */
