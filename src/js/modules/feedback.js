@@ -64,23 +64,24 @@ export const feedback = () => {
 		};
 
 		async function sendForm(form) {
-
 			let formDate = new FormData(form);
-
-
 			try {
-				let response = await fetch('http://daniyardev.atwebpages.com/files/sendmailer.php', {
+
+				form.classList.add('await');
+
+				await fetch('http://daniyardev.atwebpages.com/files/sendmailer.php', {
 					method: "POST",
 					body: formDate
 				});
 
+				form.classList.remove('await');
 				let confirmationOk = document.querySelector('.feedback__confirmation_ok');
-
 				confirmationOk.classList.add('show')
 				setTimeout(() => confirmationOk.classList.remove('show'), 3000);
 				scrollToElement(form);
 				form.reset();
 			} catch (error) {
+				form.classList.remove('await');
 				let confirmationError = document.querySelector('.feedback__confirmation_error');
 				confirmationError.classList.add('show')
 				setTimeout(() => confirmationError.classList.remove('show'), 3000);

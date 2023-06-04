@@ -34,10 +34,6 @@
 		visibility: hidden;
 		transition: all 1.2s ease 0s;
 
-		@media (max-width:1090px) {
-			padding: 80px;
-		}
-
 		&._show {
 			opacity: 1;
 			visibility: visible;
@@ -54,9 +50,10 @@
 	display: flex;
 	flex-direction: column;
 
-	// @media (max-width:1090px) {
-	// 	padding: 80px;
-	// }
+	@media (max-width:767px) {
+		padding: 30px 10px 10px 10px;
+	}
+
 
 	/* .item-services__icon */
 

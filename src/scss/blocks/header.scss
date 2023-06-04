@@ -8,19 +8,6 @@
 	width: 100%;
 	z-index: 50;
 
-	//header__observerMarker
-
-
-
-	// &::before {
-	// 	content: "";
-	// 	width: 100%;
-	// 	position: fixed;
-	// 	height: 40px;
-	// 	left: 0;
-	// 	top: 0;
-	// 	background-color: rgba(87, 20, 20, 0.502);
-	// }
 
 	/* .header_container */
 
@@ -73,6 +60,10 @@
 			transition: all 0.3s ease 0s;
 			z-index: 10;
 
+			@media (max-width:430px) {
+				padding: 40px 0 0 40px;
+			}
+
 			&._show {
 				left: 0;
 				visibility: visible;
@@ -87,6 +78,11 @@
 		@media (max-width:767px) {
 			margin-bottom: 20px;
 			font-size: 48px;
+		}
+
+		@media (max-width:430px) {
+			margin-bottom: 20px;
+			font-size: 38px;
 		}
 	}
 
