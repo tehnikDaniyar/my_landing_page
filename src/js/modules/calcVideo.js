@@ -1,4 +1,5 @@
 export const calcVideo = () => {
+	const parent = document.querySelector('#prices-video');
 	const amountIndoorCameras = document.querySelector('#amountIndoorCameras');
 	const amountOutdoorCameras = document.querySelector('#amountOutdoorCameras');
 	const installationMethod = document.querySelector('#installationMethod');
@@ -28,7 +29,7 @@ export const calcVideo = () => {
 		let works;
 		let priceVideo;
 
-		await fetch('../files/priceVideo.json').then(response => response.json()).then(json => priceVideo = json)
+		await fetch('http://mypandingpage/wp-content/themes/myLanding/assets/files/priceVideo.json').then(response => response.json()).then(json => priceVideo = json)
 		let priceCameraIndoor = priceVideo["camerasIndoor"];
 		let priceCameraOutdoor = priceVideo["camerasOutdoor"];
 		let priceCable = priceVideo["cable"];

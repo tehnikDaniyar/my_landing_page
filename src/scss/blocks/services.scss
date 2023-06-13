@@ -99,6 +99,15 @@
 		background-color: $baseColor;
 		z-index: 2;
 		text-align: center;
+
+		@media (min-width:1090px) {
+			width: 80%;
+		}
+
+		@media (max-width:420px) {
+			width: 80%;
+
+		}
 	}
 
 	/* .item-services__options */

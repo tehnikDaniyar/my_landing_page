@@ -8,6 +8,7 @@ import { calcVideo } from "./modules/calcVideo.js";
 import { calcAlarmSystem } from "./modules/calcAlarmSystem.js";
 import { modalWindows } from "./modules/modalWindows.js";
 import { feedback } from "./modules/feedback.js";
+import { galleryPopup } from "./modules/galleryPopup.js";
 
 flsFunctions.isWebp();
 observerForHeader();
@@ -19,3 +20,4 @@ calcVideo();
 calcAlarmSystem();
 modalWindows();
 feedback();
+galleryPopup();
